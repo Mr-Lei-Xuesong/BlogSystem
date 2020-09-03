@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments::head(~{::title})">
+    <title>关于我</title>
+</head>
+<body>
+<!--导航-->
+<nav th:replace="_fragments::menu(5)"></nav>
+<!--中间内容-->
+<div class="m-container m-padded-tb-big">
+    <div class="ui container">
+        <div class="ui stackable grid">
+            <div class="eleven wide column animated fadeInLeft">
+                <div class="ui segment">
+                    <img th:src="@{https://picsum.photos/800/600?random=3}" alt="" class="ui rounded image">
+                </div>
+            </div>
+            <div class="five wide column animated fadeInRightBig">
+                <div class="ui top attached segment">
+                    <div class="ui header">关于我</div>
+                </div>
+                <div class="ui attached segment">
+                    <p class="m-text">菜鸟雷，一个励志成为全栈开发者的菜鸟，一个深度熬夜的贯彻者，誓将走向秃顶的巅峰。希望可以结识志同道合的小伙伴</p>
+                    <p class="m-text">热爱编程，一个正在拼命学习的菜鸟</p>
+                </div>
+                <div class="ui attached segment">
+                    <div class="ui orange basic left pointing label">编程</div>
+                    <div class="ui orange basic left pointing label">学习</div>
+                    <div class="ui orange basic left pointing label">听歌</div>
+                    <div class="ui orange basic left pointing label">运动</div>
+                </div>
+                <div class="ui attached segment">
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">Java</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">Linux</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">MySQL</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">Spring</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">MyBatis</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">SpringBoot</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">...</div>
+                </div>
+                <div class="ui bottom attached segment">
+                    <a href="https://github.com/Mr-Lei-Xuesong" target="_blank" class="ui circular icon button"><i
+                            class="github icon"></i></a>
+                    <a href="#" class="ui wx circular icon button"><i class="weixin icon"></i></a>
+                    <a href="#" class="ui qq circular icon button" data-content="228389787"
+                       data-position="bottom center"><i class="qq icon"></i></a>
+                </div>
+                <div class="ui wechat-qr flowing popup transition hidden">
+                    <img th:src="@{/images/wechat.jpg}" alt="" class="ui rounded image" style="width: 100px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<footer th:replace="_fragments::foot"></footer>
+<!--js-->
+<div th:replace="_fragments::script"></div>
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+    $('.wx').popup({
+        popup: $('.wechat-qr'),
+        position: 'bottom center'
+    });
+    $('.qq').popup();
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments::head(~{::title})">
+    <title>服务器错误</title>
+</head>
+<body>
+<!--导航-->
+<nav th:replace="_fragments::menu(0)"></nav>
+<!--中部-->
+<br>
+<br>
+<br>
+<div class="m-container-small m-padded-tb-massive">
+    <div class="ui error message m-padded-tb-massive">
+        <div class="ui center aligned container">
+            <h1>500</h1>
+            <p>对不起，服务器发生故障</p>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<!--底部-->
+<footer th:replace="_fragments::foot"></footer>
+<!--js-->
+<div th:replace="_fragments::script"></div>
+</body>
+</html>
