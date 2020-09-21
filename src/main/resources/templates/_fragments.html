@@ -85,9 +85,11 @@
             </div>
         </div>
         <div class="ui inverted section divider"></div>
-        <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2020-2021 ICP证：<a th:href="@{https://beian.miit.gov.cn/}" target="_blank">蜀ICP备2020025692号</a></p>
+        <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2020-2021 ICP证：<a
+                th:href="@{https://beian.miit.gov.cn/}" target="_blank">蜀ICP备2020025692号-2</a></p>
         <p class="m-text-thin m-text-spaced m-opacity-tiny"><img th:src="@{/images/beian.png}" alt="备案图标"><a
-                th:href="@{http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51172402000111}" target="_blank">川公网安备 51172402000111号</a></p>
+                th:href="@{http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51172402000111}"
+                target="_blank">川公网安备 51172402000111号</a></p>
         <p class="m-text-thin m-text-spaced m-opacity-tiny"><span id="timeDate"></span><span id="times"></span></p>
     </div>
 </footer>
@@ -110,19 +112,24 @@
     <script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
     <script type="text/javascript">
-        function createTime() {
+        function show_date_time() {
+            window.setTimeout("show_date_time()", 1000);
             let nowTime = new Date();
-            let oldTime = new Date(2020, 8, 18, 0, 0, 0, 0);
-            let day = nowTime.getDate() - oldTime.getDate();
-            let hour = nowTime.getHours() - oldTime.getHours();
-            let minute = nowTime.getMinutes() - oldTime.getMinutes();
-            let second = nowTime.getSeconds() - oldTime.getSeconds();
+            let oldTime = new Date("08-18-2020 00:00:00");
+            let date = (nowTime.getTime() - oldTime.getTime());//从建站到现在的毫秒数
+            let msPerDay = 24 * 60 * 60 * 1000;
+            let days = date / msPerDay;
+            let day = Math.floor(days);
+            let hours = (day - days) * -24;
+            let hour = Math.floor(hours);
+            let minutes = (hour - hours) * -60;
+            let minute = Math.floor((hour - hours) * -60);
+            let second = Math.floor((minute - minutes) * -60);
             document.getElementById("timeDate").innerHTML = "本站已安全运行 " + day + " 天 ";
             document.getElementById("times").innerHTML = hour + " 小时 " + minute + " 分 " + second + " 秒";
         }
 
-        setInterval("createTime()", 1000);
-
+        show_date_time();
         WIDGET = {
             CONFIG: {
                 "modules": "01234",
