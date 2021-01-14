@@ -17,7 +17,7 @@ import java.util.Arrays;
 @Slf4j
 public class LogAspect {
 
-    @Pointcut("execution(* com.jkx.controller.*.*(..))")
+    @Pointcut("execution(* com.demo.controller.*.*(..))")
     public void pointCut() {
     }
 
