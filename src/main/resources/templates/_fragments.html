@@ -23,7 +23,6 @@
 <body>
 <!--导航-->
 <nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small animated fadeInDown" th:fragment="menu(n)">
-    <div id="weather-v2-plugin-simple"></div>
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
             <h2 class="ui teal header item">MyBlog</h2>
@@ -95,7 +94,7 @@
 </footer>
 <!--js-->
 <div th:fragment="script">
-    <meting-js id="547957931" lrc-type="0" server="netease" order="list" type="playlist" fixed="true" list-olded="true"
+    <meting-js id="2714925959" lrc-type="0" server="tencent" order="list" type="playlist" fixed="true" list-olded="true"
                list-folded="true" preload="none" list-max-height="400px"></meting-js>
     <script th:src="@{/js/jquery-3.5.1.min.js}"></script>
     <script th:src="@{/js/semantic.min.js}"></script>
@@ -109,7 +108,6 @@
             th:src="@{/js/canvas-nest.min.js}"></script>
     <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-    <script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
     <script type="text/javascript">
         function show_date_time() {
@@ -130,30 +128,6 @@
         }
 
         show_date_time();
-        WIDGET = {
-            CONFIG: {
-                "modules": "01234",
-                "background": 4,
-                "backgroundColor": "1B1C1D",
-                "tmpColor": "FFFFFF",
-                "tmpSize": 16,
-                "cityColor": "FFFFFF",
-                "citySize": 16,
-                "aqiSize": 16,
-                "weatherIconSize": 24,
-                "alertIconSize": 18,
-                "padding": "10px 10px 10px 10px",
-                "shadow": "1",
-                "language": "zh",
-                "borderRadius": 5,
-                "fixed": "true",
-                "vertical": "middle",
-                "horizontal": "center",
-                "right": 10,
-                "top": 10,
-                "key": "SVLuJnBE91"
-            }
-        };
 
         L2Dwidget.init({
             "display": {
